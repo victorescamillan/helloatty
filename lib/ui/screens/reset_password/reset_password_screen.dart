@@ -16,7 +16,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   Widget build(BuildContext context) {
     return AppScaffold(
       appBar: AppBar(),
-      body: const TempContainer(title: 'Reset Password'),
+      body: const TempContainer(title: 'ResetPasswordScreen'),
     );
   }
 }

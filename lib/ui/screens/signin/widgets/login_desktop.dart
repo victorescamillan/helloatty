@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:helloatty/constants/app_assets.dart';
 import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
+import 'package:helloatty/navigation/app_router.gr.dart';
 import 'package:helloatty/ui/widgets/app_buttons.dart';
 import 'package:helloatty/ui/widgets/app_inputs.dart';
 
@@ -85,7 +87,10 @@ class _LoginDesktopState extends State<LoginDesktop> {
                             padding:
                                 const EdgeInsets.symmetric(vertical: size10),
                             child: TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  context.router
+                                      .push(const ForgotPasswordScreen());
+                                },
                                 child: Text(
                                   'Forgot Password',
                                   style: kTitleTextStyle.copyWith(color: kRed),
@@ -111,7 +116,10 @@ class _LoginDesktopState extends State<LoginDesktop> {
                               overflow: TextOverflow.ellipsis,
                             )),
                             TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  context.router
+                                      .push(const RegistrationScreen());
+                                },
                                 child: Row(
                                   children: [
                                     Text(
