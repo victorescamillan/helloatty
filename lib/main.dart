@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:helloatty/constants/app_texts.dart';
+import 'package:helloatty/navigation/app_router.dart';
+import 'package:helloatty/navigation/app_router.gr.dart';
 import 'package:helloatty/ui/screens/signin/login_screen.dart';
 import 'package:helloatty/ui/themes/app_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+  MyApp({Key? key}) : super(key: key);
   // This widget is the root of your application.
+  final _appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
+      title: appNameText,
       theme: defaultTheme,
-      home: const LoginScreen(),
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
 }
