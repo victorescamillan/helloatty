@@ -1,0 +1,1 @@
+const appNameText = 'Hello Atty';
