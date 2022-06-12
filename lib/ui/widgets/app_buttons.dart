@@ -7,7 +7,7 @@ class DefaultElevatedButton extends StatelessWidget {
   final double verticalMargin;
   final double horizontalMargin;
   final double verticalPadding;
-  final Function? onPressed;
+  final VoidCallback? onPressed;
   final Widget? child;
   const DefaultElevatedButton(
       {Key? key,
@@ -29,7 +29,7 @@ class DefaultElevatedButton extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 primary: appColor,
                 padding: EdgeInsets.symmetric(vertical: verticalPadding)),
-            onPressed: () => onPressed,
+            onPressed: onPressed,
             child: child));
   }
 }

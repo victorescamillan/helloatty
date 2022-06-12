@@ -35,6 +35,7 @@ const double size50 = 50;
 const double size80 = 80;
 const double size90 = 90;
 const double size100 = 100;
+const double size200 = 200;
 const double size300 = 300;
 
 //Padding size

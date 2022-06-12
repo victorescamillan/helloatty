@@ -82,7 +82,7 @@ class _LoginCredentialsState extends State<LoginCredentials> {
                     padding: const EdgeInsets.symmetric(vertical: size10),
                     child: TextButton(
                         onPressed: () {
-                          context.router.push(const ForgotPasswordScreen());
+                          context.router.push(const ForgotPasswordRoute());
                         },
                         child: Text(
                           'Forgot Password',
@@ -91,7 +91,9 @@ class _LoginCredentialsState extends State<LoginCredentials> {
                   ),
                 ),
                 DefaultElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.router.replace(const HomeRoute());
+                  },
                   child: Text(
                     'Login',
                     style: kTitleTextStyle.copyWith(color: kWhite),
@@ -110,7 +112,7 @@ class _LoginCredentialsState extends State<LoginCredentials> {
                     )),
                     TextButton(
                         onPressed: () {
-                          context.router.push(const RegistrationScreen());
+                          context.router.push(const RegistrationRoute());
                         },
                         child: Row(
                           children: [

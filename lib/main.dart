@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helloatty/constants/app_texts.dart';
-import 'package:helloatty/navigation/app_router.dart';
 import 'package:helloatty/navigation/app_router.gr.dart';
-import 'package:helloatty/ui/screens/signin/login_screen.dart';
 import 'package:helloatty/ui/themes/app_theme.dart';
 
 void main() {
