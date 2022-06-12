@@ -92,7 +92,7 @@ class _LoginCredentialsState extends State<LoginCredentials> {
                 ),
                 DefaultElevatedButton(
                   onPressed: () {
-                    // context.router.replace(const HomeRoute());
+                    context.router.replace(const HomeRoute());
                   },
                   child: Text(
                     'Login',
