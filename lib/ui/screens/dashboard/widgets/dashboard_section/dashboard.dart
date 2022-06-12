@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
-import 'package:helloatty/ui/screens/dashboard/widgets/static_bar.dart';
-import 'package:helloatty/ui/screens/dashboard/widgets/statistic_card.dart';
+import 'package:helloatty/ui/screens/dashboard/widgets/dashboard_section/static_bar.dart';
+import 'package:helloatty/ui/screens/dashboard/widgets/dashboard_section/statistic_card.dart';
 import 'package:helloatty/ui/widgets/app_dropdown_buttons.dart';
 
 class Dashboard extends StatelessWidget {
