@@ -6,7 +6,7 @@ import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/navigation/app_router.gr.dart';
-import 'package:helloatty/ui/screens/home/widgets/navigation_item.dart';
+import 'package:helloatty/ui/widgets/navigation_item.dart';
 
 class NavigationHeader extends StatelessWidget {
   const NavigationHeader({Key? key}) : super(key: key);

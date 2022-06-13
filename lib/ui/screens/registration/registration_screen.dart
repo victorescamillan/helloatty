@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:helloatty/ui/screens/registration/widgets/registration_header.dart';
+import 'package:helloatty/ui/widgets/app_footer.dart';
 import 'package:helloatty/ui/widgets/app_scaffold.dart';
 import 'package:helloatty/ui/widgets/temp_container.dart';
 
@@ -12,9 +14,13 @@ class RegistrationScreen extends StatefulWidget {
 class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
-    return const AppScaffold(
-      body: TempContainer(
-        title: 'RegistrationScreen',
+    return AppScaffold(
+      body: Column(
+        children: const [
+          RegistrationHeader(),
+          Expanded(child: TempContainer()),
+          AppFooter()
+        ],
       ),
     );
   }

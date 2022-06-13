@@ -3,8 +3,8 @@ import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 
-class NavigationFooter extends StatelessWidget {
-  const NavigationFooter({Key? key}) : super(key: key);
+class AppFooter extends StatelessWidget {
+  const AppFooter({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
