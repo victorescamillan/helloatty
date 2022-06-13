@@ -42,7 +42,7 @@ class LawyerList extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [LawyerListCard(), LawyerListCard()],
+          children: const [LawyerListCard(), LawyerListCard()],
         )
       ],
     );

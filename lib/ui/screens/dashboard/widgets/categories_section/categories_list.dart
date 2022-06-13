@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/ui/screens/dashboard/widgets/categories_section/categories_card.dart';
-import 'package:helloatty/ui/screens/dashboard/widgets/lawyer_list_section/lawyer_list_card.dart';
 
 class CategoriesList extends StatelessWidget {
   const CategoriesList({Key? key}) : super(key: key);
@@ -16,6 +14,9 @@ class CategoriesList extends StatelessWidget {
         const Text(
           'Categories',
           style: kHeader1TextStyle,
+        ),
+        const SizedBox(
+          height: size20,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -41,8 +41,8 @@ class LawyerListCard extends StatelessWidget {
             ),
             DefaultElevatedButton(
               onPressed: () {},
-              child: Text('Book Appointment'),
               width: 150,
+              child: const Text('Book Appointment'),
             )
           ]),
         ),
