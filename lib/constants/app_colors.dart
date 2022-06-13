@@ -14,6 +14,7 @@ const Color unselectedColor = Color(0xFFBDBDBD);
 const Color notificationBackground = Color(0xFFF7FCF8);
 const Color activeColor = Color(0xFFF14336);
 const Color footerBackground = Color(0xFF171717);
+const Color inputBackground = Color(0xFFF9FAFF);
 
 //Cards
 const Color cardColor = Color(0xFFEEF7EE);

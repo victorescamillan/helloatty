@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
+import 'package:helloatty/constants/app_styles.dart';
 
 class BorderedTextField extends StatelessWidget {
   final double verticalMargin;
@@ -11,9 +12,12 @@ class BorderedTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final String hintText;
   final bool isObscureText;
+  final String label;
+  final double width;
   final TextEditingController? controller;
   const BorderedTextField(
       {Key? key,
+      this.label = '',
       this.verticalMargin = size5,
       this.horizontalMargin = 0,
       this.verticalPadding = size20,
@@ -22,16 +26,23 @@ class BorderedTextField extends StatelessWidget {
       this.prefixIcon,
       this.suffixIcon,
       this.hintText = '',
+      this.width = double.infinity,
       this.isObscureText = false})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width,
       margin: EdgeInsets.symmetric(
           vertical: verticalMargin, horizontal: horizontalMargin),
-      child: Stack(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Text(
+            label,
+            style: kTitleTextStyle,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: size6),
             child: TextField(
@@ -39,18 +50,20 @@ class BorderedTextField extends StatelessWidget {
               obscureText: isObscureText,
               cursorColor: kGrey,
               decoration: InputDecoration(
+                filled: true,
+                fillColor: inputBackground,
                 prefixIcon: prefixIcon,
                 suffixIcon: suffixIcon,
                 contentPadding: EdgeInsets.symmetric(
                     vertical: verticalPadding, horizontal: horizontalPadding),
                 focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: kGrey),
+                    borderSide: BorderSide(color: inputBackground),
                     borderRadius: BorderRadius.all(Radius.circular(size10))),
                 enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: kGrey),
+                    borderSide: BorderSide(color: inputBackground),
                     borderRadius: BorderRadius.all(Radius.circular(size10))),
                 border: const OutlineInputBorder(
-                    borderSide: BorderSide(color: kGrey),
+                    borderSide: BorderSide(color: inputBackground),
                     borderRadius: BorderRadius.all(Radius.circular(size10))),
                 hintText: hintText,
               ),
