@@ -6,8 +6,8 @@ import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/navigation/app_router.gr.dart';
-import 'package:helloatty/ui/widgets/app_buttons.dart';
-import 'package:helloatty/ui/widgets/app_inputs.dart';
+import 'package:helloatty/ui/widgets/app_buttons/default_button.dart';
+import 'package:helloatty/ui/widgets/app_inputs/default_textfield.dart';
 
 class LoginCredentials extends StatefulWidget {
   const LoginCredentials({Key? key}) : super(key: key);

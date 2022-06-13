@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:helloatty/ui/screens/registration/widgets/registration_form.dart';
 import 'package:helloatty/ui/screens/registration/widgets/registration_header.dart';
 import 'package:helloatty/ui/widgets/app_footer.dart';
 import 'package:helloatty/ui/widgets/app_scaffold.dart';
-import 'package:helloatty/ui/widgets/temp_container.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: Column(
         children: const [
           RegistrationHeader(),
-          Expanded(child: TempContainer()),
+          Expanded(child: RegistrationForm()),
           AppFooter()
         ],
       ),

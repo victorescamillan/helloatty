@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
-import 'package:helloatty/ui/widgets/app_buttons.dart';
+import 'package:helloatty/ui/widgets/app_buttons/default_button.dart';
 
 class LawyerListCard extends StatelessWidget {
   final Widget? content;
