@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/ui/screens/dashboard/widgets/dashboard_section/static_bar.dart';
-import 'package:helloatty/ui/screens/dashboard/widgets/dashboard_section/statistic_card.dart';
+import 'package:helloatty/ui/widgets/app_cards/default_card.dart';
 import 'package:helloatty/ui/widgets/app_dropdowns/default_dropdown_button%20copy.dart';
 
 class Dashboard extends StatelessWidget {
@@ -19,14 +19,16 @@ class Dashboard extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [_totalBookings(), _totalAmountPaid()],
+          children: [_totalBookings(context), _totalAmountPaid(context)],
         )
       ],
     );
   }
 
-  _totalBookings() {
-    return StatisticCard(
+  _totalBookings(BuildContext context) {
+    return DefaultCard(
+      width: MediaQuery.of(context).size.width / 2.4,
+      height: 350,
       content: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,8 +100,10 @@ class Dashboard extends StatelessWidget {
     );
   }
 
-  _totalAmountPaid() {
-    return StatisticCard(
+  _totalAmountPaid(BuildContext context) {
+    return DefaultCard(
+      width: MediaQuery.of(context).size.width / 2.4,
+      height: 350,
       content: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

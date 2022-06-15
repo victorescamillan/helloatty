@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 
-class StatisticCard extends StatelessWidget {
+class DefaultCard extends StatelessWidget {
   final Widget? content;
-  const StatisticCard({Key? key, this.content}) : super(key: key);
+  final double width;
+  final double height;
+  const DefaultCard(
+      {Key? key, this.content, this.width = size100, this.height = size100})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: size20),
-      width: MediaQuery.of(context).size.width / 2.4,
-      height: 350,
+      width: width,
+      height: height,
       child: Container(
         decoration: BoxDecoration(
             border: Border.all(color: kGrey),
