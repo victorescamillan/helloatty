@@ -10,6 +10,7 @@ import 'package:helloatty/ui/widgets/app_buttons/default_button.dart';
 import 'package:helloatty/ui/widgets/app_buttons/default_outlined_button.dart';
 import 'package:helloatty/ui/widgets/app_dropdowns/bordered_dropdown_button.dart';
 import 'package:helloatty/ui/widgets/app_inputs/bordered_textfield.dart';
+import 'package:helloatty/utils/utils.dart';
 
 class RegistrationForm extends StatefulWidget {
   const RegistrationForm({Key? key}) : super(key: key);
@@ -282,7 +283,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
       children: [
         DefaultElevatedButton(
           onPressed: () {
-            context.router.replace(const HomeRoute());
+            _showConfirmation(context);
           },
           width: size200,
           child: Text(
@@ -306,4 +307,43 @@ class _RegistrationFormState extends State<RegistrationForm> {
       ],
     );
   }
+}
+
+_showConfirmation(BuildContext context) {
+  defaultAlertDialog(context,
+      content: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Thank you for registering to Hello Atty.!',
+            style: kHeader1TextStyle.copyWith(color: appColor),
+          ),
+          const SizedBox(
+            height: size40,
+          ),
+          Text(
+            'Please wait (No.) day for us to verify your information.',
+            style: kHeader3TextStyle.copyWith(
+                fontWeight: FontWeight.normal, color: appColor),
+          ),
+          Text(
+            "An email will be sent you once it's finished.",
+            style: kHeader3TextStyle.copyWith(
+                fontWeight: FontWeight.normal, color: appColor),
+          ),
+          const SizedBox(
+            height: size10,
+          ),
+          DefaultElevatedButton(
+            width: size150,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(
+              'Close',
+              style: kTitleTextStyle.copyWith(color: kWhite),
+            ),
+          )
+        ],
+      ));
 }
