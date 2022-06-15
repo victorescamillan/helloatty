@@ -28,6 +28,14 @@ const kTitleTextStyle = TextStyle(
     fontSize: size14,
     color: appTitleColor);
 
+const kTitleTextStyleUnderline = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Quicksand',
+    fontSize: size14,
+    decoration: TextDecoration.underline,
+    decorationColor: activeColor,
+    decorationThickness: 4);
+
 //SubTitle Style
 const kSubtitleTextStyle = TextStyle(
     fontWeight: FontWeight.normal,
