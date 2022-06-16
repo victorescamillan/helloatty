@@ -22,13 +22,6 @@ class _BookingScreenState extends State<BookingScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             CustomTabBar(),
-            SizedBox(
-              height: size20,
-            ),
-            BookingGridView(),
-            SizedBox(
-              height: size20,
-            ),
           ],
         ),
       ),

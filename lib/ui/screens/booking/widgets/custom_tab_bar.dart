@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
+import 'package:helloatty/ui/screens/booking/widgets/booking_grid_view.dart';
+import 'package:helloatty/ui/screens/booking/widgets/booking_history.dart';
 
 class CustomTabBar extends StatefulWidget {
   const CustomTabBar({Key? key}) : super(key: key);
@@ -34,7 +36,7 @@ class _CustomTabBarState extends State<CustomTabBar> {
           children: [
             _currentOrHistoryTab(),
             const SizedBox(height: size15,),
-            _filterTab(),
+            (isCurrentTap) ? BookingGridView() : BookingHistory()
           ],
         )
       ],
@@ -96,85 +98,5 @@ class _CustomTabBarState extends State<CustomTabBar> {
     );
   }
 
-  _filterTab() {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-            padding: const EdgeInsets.only(
-              bottom: 3,
-            ),
-            decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(
-                  color: (isAllTap) ? activeColor : kWhite,
-                  width: 2.0,
-                ))
-            ),
-            child: GestureDetector(
-              child: const Text(
-                  'All',
-                  style: kTitleTextStyle
-              ),
-              onTap: () {
-                setState((){
-                  isAllTap = true;
-                  isPendingTap = false;
-                  isPreviousTap = false;
-                });
-              },
-            )
-        ),
-        const SizedBox(width: size20,),
-        Container(
-            padding: const EdgeInsets.only(
-              bottom: 3,
-            ),
-            decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(
-                  color: (isPendingTap) ? activeColor : kWhite,
-                  width: 2.0,
-                ))
-            ),
-            child: GestureDetector(
-              child: const Text(
-                  'Pending',
-                  style: kTitleTextStyle
-              ),
-              onTap: () {
-                setState((){
-                  isAllTap = false;
-                  isPendingTap = true;
-                  isPreviousTap = false;
-                });
-              },
-            )
-        ),
-        const SizedBox(width: size20,),
-        Container(
-            padding: const EdgeInsets.only(
-              bottom: 3,
-            ),
-            decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(
-                  color: (isPreviousTap) ? activeColor : kWhite,
-                  width: 2.0,
-                ))
-            ),
-            child: GestureDetector(
-              child: const Text(
-                  'Previous',
-                  style: kTitleTextStyle
-              ),
-              onTap: () {
-                setState((){
-                  isAllTap = false;
-                  isPendingTap = false;
-                  isPreviousTap = true;
-                });
-              },
-            )
-        ),
-      ],
-    );
-  }
+
 }

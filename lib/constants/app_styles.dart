@@ -9,6 +9,18 @@ const kHeader1TextStyle = TextStyle(
     fontSize: size24,
     color: appBarTitleColor);
 
+const kActiveColorTextStyle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Quicksand',
+    fontSize: size24,
+    color: activeColor);
+
+const kHeaderTextStyle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Quicksand',
+    fontSize: size60,
+    color: activeColor);
+
 const kHeader2TextStyle = TextStyle(
     fontWeight: FontWeight.bold,
     fontFamily: 'Quicksand',
@@ -28,6 +40,12 @@ const kTitleTextStyle = TextStyle(
     fontSize: size14,
     color: appTitleColor);
 
+const kBlueTextStyle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Quicksand',
+    fontSize: size14,
+    color: appColor);
+
 const kTitleTextStyleUnderline = TextStyle(
     fontWeight: FontWeight.bold,
     fontFamily: 'Quicksand',
@@ -38,6 +56,12 @@ const kTitleTextStyleUnderline = TextStyle(
 
 //SubTitle Style
 const kSubtitleTextStyle = TextStyle(
+    fontWeight: FontWeight.normal,
+    fontFamily: 'Quicksand',
+    fontSize: size12,
+    color: appSubTitleColor);
+
+const kSubtitle2TextStyle = TextStyle(
     fontWeight: FontWeight.normal,
     fontFamily: 'Quicksand',
     fontSize: size12,
