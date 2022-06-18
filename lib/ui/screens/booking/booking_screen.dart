@@ -14,16 +14,14 @@ class BookingScreen extends StatefulWidget {
 class _BookingScreenState extends State<BookingScreen> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding:
-        const EdgeInsets.symmetric(horizontal: size100, vertical: size20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            CustomTabBar(),
-          ],
-        ),
+    return Padding(
+      padding:
+      const EdgeInsets.symmetric(horizontal: size100, vertical: size20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          CustomTabBar(),
+        ],
       ),
     );
   }

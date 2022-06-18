@@ -3,7 +3,7 @@ import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/ui/screens/booking/widgets/booking_grid_view.dart';
-import 'package:helloatty/ui/screens/booking/widgets/booking_history.dart';
+import 'package:helloatty/ui/screens/booking/widgets/booking_history_grid.dart';
 
 class CustomTabBar extends StatefulWidget {
   const CustomTabBar({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class _CustomTabBarState extends State<CustomTabBar> {
           children: [
             _currentOrHistoryTab(),
             const SizedBox(height: size15,),
-            (isCurrentTap) ? BookingGridView() : BookingHistory()
+            (isCurrentTap) ? const BookingGridView() : const BookingHistoryGrid()
           ],
         )
       ],
