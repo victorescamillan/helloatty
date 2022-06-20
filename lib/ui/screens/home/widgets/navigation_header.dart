@@ -7,7 +7,9 @@ import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/enums/enums.dart';
 import 'package:helloatty/navigation/app_router.gr.dart';
+import 'package:helloatty/ui/screens/home/widgets/profile_avatar.dart';
 import 'package:helloatty/ui/widgets/navigation_item.dart';
+import 'package:popover/popover.dart';
 
 class NavigationHeader extends StatefulWidget {
   const NavigationHeader({Key? key}) : super(key: key);
@@ -122,13 +124,7 @@ class _NavigationHeaderState extends State<NavigationHeader> {
                     ),
                     onTap: () {},
                   ),
-                  NavigationItem(
-                    child: const CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          'https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/05/thor-recap-feature.jpg'),
-                    ),
-                    onTap: () {},
-                  ),
+                  const ProfileAvatar(),
                   NavigationItem(
                     child: Row(
                       children: [

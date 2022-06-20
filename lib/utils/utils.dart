@@ -28,3 +28,7 @@ Future<DateTime?> defaultDateTimePicker(
       firstDate: firstDate,
       lastDate: DateTime.now());
 }
+
+Size appSize(BuildContext context) {
+  return MediaQuery.of(context).size;
+}
