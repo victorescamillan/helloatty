@@ -16,3 +16,15 @@ void defaultAlertDialog(BuildContext context,
                 child: content),
           ));
 }
+
+Future<DateTime?> defaultDateTimePicker(
+  BuildContext context,
+) async {
+  int currentYear = DateTime.now().year;
+  DateTime firstDate = DateTime(currentYear - 60);
+  return await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: firstDate,
+      lastDate: DateTime.now());
+}

@@ -4,7 +4,11 @@ import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/constants/app_texts.dart';
+import 'package:helloatty/enums/enums.dart';
 import 'package:helloatty/navigation/app_router.gr.dart';
+import 'package:helloatty/ui/screens/profile/widgets/admin_profile_form.dart';
+import 'package:helloatty/ui/screens/profile/widgets/client_profile_form.dart';
+import 'package:helloatty/ui/screens/profile/widgets/lawyer_profile_form.dart';
 import 'package:helloatty/ui/screens/registration/widgets/proof_item.dart';
 import 'package:helloatty/ui/widgets/app_buttons/default_button.dart';
 import 'package:helloatty/ui/widgets/app_buttons/default_outlined_button.dart';
@@ -13,7 +17,8 @@ import 'package:helloatty/ui/widgets/app_inputs/bordered_textfield.dart';
 import 'package:helloatty/utils/utils.dart';
 
 class RegistrationForm extends StatefulWidget {
-  const RegistrationForm({Key? key}) : super(key: key);
+  final UserType userType;
+  const RegistrationForm({Key? key, required this.userType}) : super(key: key);
 
   @override
   State<RegistrationForm> createState() => _RegistrationFormState();
@@ -42,8 +47,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
               child: ListView(
                 padding: const EdgeInsets.all(size20),
                 children: <Widget>[
-                  _userInformation(inputWidth),
-                  _identificationProof(inputWidth),
+                  _getProfileForm(),
                   _password(inputWidth),
                   _privacyPolicy(),
                   _actionButtons()
@@ -223,19 +227,36 @@ class _RegistrationFormState extends State<RegistrationForm> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             BorderedTextField(
-              label: 'Password',
-              hintText: enterPasswordText,
-              width: inputWidth,
-              isObscureText: true,
-              horizontalPadding: size20,
+                label: 'Password',
+                hintText: enterPasswordText,
+                width: inputWidth,
+                isObscureText: true,
+                horizontalPadding: size20,
+                suffixIcon: IconButton(
+                  onPressed: () {},
+                  splashRadius: size20,
+                  icon: const Icon(
+                    Icons.remove_red_eye_rounded,
+                    color: kGrey,
+                  ),
+                )),
+            const SizedBox(
+              width: size20,
             ),
             BorderedTextField(
-              label: 'Confirm Password',
-              hintText: enterPasswordText,
-              width: inputWidth,
-              isObscureText: true,
-              horizontalPadding: size20,
-            ),
+                label: 'Confirm Password',
+                hintText: enterPasswordText,
+                width: inputWidth,
+                isObscureText: true,
+                horizontalPadding: size20,
+                suffixIcon: IconButton(
+                  onPressed: () {},
+                  splashRadius: size20,
+                  icon: const Icon(
+                    Icons.remove_red_eye_rounded,
+                    color: kGrey,
+                  ),
+                )),
           ],
         ),
       ],
@@ -306,6 +327,18 @@ class _RegistrationFormState extends State<RegistrationForm> {
         )
       ],
     );
+  }
+
+  _getProfileForm() {
+    if (widget.userType == UserType.client) {
+      return const ClientProfileForm();
+    }
+    if (widget.userType == UserType.lawyer) {
+      return const LawyerProfileForm();
+    }
+    if (widget.userType == UserType.admin) {
+      return const AdminProfileForm();
+    }
   }
 }
 

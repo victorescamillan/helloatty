@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloatty/enums/enums.dart';
 import 'package:helloatty/ui/screens/registration/widgets/registration_form.dart';
 import 'package:helloatty/ui/screens/registration/widgets/registration_header.dart';
 import 'package:helloatty/ui/widgets/app_footer.dart';
@@ -18,7 +19,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: Column(
         children: const [
           RegistrationHeader(),
-          Expanded(child: RegistrationForm()),
+          Expanded(
+              child: RegistrationForm(
+            userType: UserType.lawyer,
+          )),
           AppFooter()
         ],
       ),

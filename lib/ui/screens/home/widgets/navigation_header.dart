@@ -5,108 +5,166 @@ import 'package:helloatty/constants/app_assets.dart';
 import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
+import 'package:helloatty/enums/enums.dart';
 import 'package:helloatty/navigation/app_router.gr.dart';
 import 'package:helloatty/ui/widgets/navigation_item.dart';
 
-class NavigationHeader extends StatelessWidget {
+class NavigationHeader extends StatefulWidget {
   const NavigationHeader({Key? key}) : super(key: key);
 
   @override
+  State<NavigationHeader> createState() => _NavigationHeaderState();
+}
+
+class _NavigationHeaderState extends State<NavigationHeader> {
+  NavItem _navItem = NavItem.home;
+
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          InkWell(
-              onTap: () {
-                context.router.navigate(const DashboardRoute());
-              },
-              child: Image.asset(
-                appLogoWithText,
-                width: size200,
-              )),
-          Row(
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              NavigationItem(
-                child: const Text(
-                  'Home',
-                  style: kHeader2TextStyle,
-                ),
-                onTap: () {
-                  context.router.navigate(const DashboardRoute());
-                },
-              ),
-              NavigationItem(
-                child: const Text(
-                  'Booking',
-                  style: kHeader2TextStyle,
-                ),
-                onTap: () {
-                  context.router.navigate(const BookingRoute());
-                },
-              ),
-              NavigationItem(
-                child: const Text(
-                  'Finance',
-                  style: kHeader2TextStyle,
-                ),
-                onTap: () {
-                  context.router.navigate(const FinanceRoute());
-                },
-              ),
-              NavigationItem(
-                child: SvgPicture.asset(
-                  messagesAsset,
-                  height: size26,
-                  width: size26,
-                ),
-                onTap: () {},
-              ),
-              NavigationItem(
-                child: SvgPicture.asset(
-                  bellAsset,
-                  height: size26,
-                  width: size26,
-                ),
-                onTap: () {},
-              ),
-              NavigationItem(
-                child: const CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/05/thor-recap-feature.jpg'),
-                ),
-                onTap: () {},
-              ),
-              NavigationItem(
-                child: Row(
-                  children: [
-                    Container(
-                      height: size20,
-                      width: size2,
-                      color: activeColor,
+              InkWell(
+                  onTap: () {
+                    setState(() {
+                      _navItem = NavItem.home;
+                    });
+                    context.router.navigate(const DashboardRoute());
+                  },
+                  child: Image.asset(
+                    appLogoWithText,
+                    width: size200,
+                  )),
+              Row(
+                children: [
+                  NavigationItem(
+                    isActive: _navItem == NavItem.home,
+                    onTap: () {
+                      setState(() {
+                        _navItem = NavItem.home;
+                      });
+                      context.router.navigate(const DashboardRoute());
+                    },
+                    child: const Text(
+                      'Home',
+                      style: kHeader2TextStyle,
                     ),
-                    const Icon(
-                      Icons.arrow_forward,
-                      color: activeColor,
+                  ),
+                  NavigationItem(
+                    isActive: _navItem == NavItem.calendar,
+                    child: const Text(
+                      'Calendar',
+                      style: kHeader2TextStyle,
                     ),
-                    const SizedBox(
-                      width: size5,
+                    onTap: () {
+                      setState(() {
+                        _navItem = NavItem.calendar;
+                      });
+                      context.router.navigate(const CalendarRoute());
+                    },
+                  ),
+                  NavigationItem(
+                    isActive: _navItem == NavItem.mySchedule,
+                    child: const Text(
+                      'My Schedule',
+                      style: kHeader2TextStyle,
                     ),
-                    Text(
-                      'Sign Out',
-                      style: kHeader3TextStyle.copyWith(color: activeColor),
+                    onTap: () {
+                      setState(() {
+                        _navItem = NavItem.mySchedule;
+                      });
+                      context.router.navigate(const MyScheduleRoute());
+                    },
+                  ),
+                  NavigationItem(
+                    isActive: _navItem == NavItem.booking,
+                    child: const Text(
+                      'Booking',
+                      style: kHeader2TextStyle,
                     ),
-                  ],
-                ),
-                onTap: () {
-                  context.router.replace(const LoginRoute());
-                },
-              ),
+                    onTap: () {
+                      setState(() {
+                        _navItem = NavItem.booking;
+                      });
+                      context.router.navigate(const BookingRoute());
+                    },
+                  ),
+                  NavigationItem(
+                    isActive: _navItem == NavItem.finance,
+                    child: const Text(
+                      'Finance',
+                      style: kHeader2TextStyle,
+                    ),
+                    onTap: () {
+                      setState(() {
+                        _navItem = NavItem.finance;
+                      });
+                      context.router.navigate(const FinanceRoute());
+                    },
+                  ),
+                  NavigationItem(
+                    child: SvgPicture.asset(
+                      messagesAsset,
+                      height: size26,
+                      width: size26,
+                    ),
+                    onTap: () {},
+                  ),
+                  NavigationItem(
+                    child: SvgPicture.asset(
+                      bellAsset,
+                      height: size26,
+                      width: size26,
+                    ),
+                    onTap: () {},
+                  ),
+                  NavigationItem(
+                    child: const CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/05/thor-recap-feature.jpg'),
+                    ),
+                    onTap: () {},
+                  ),
+                  NavigationItem(
+                    child: Row(
+                      children: [
+                        Container(
+                          height: size20,
+                          width: size2,
+                          color: activeColor,
+                        ),
+                        const Icon(
+                          Icons.arrow_forward,
+                          color: activeColor,
+                        ),
+                        const SizedBox(
+                          width: size5,
+                        ),
+                        Text(
+                          'Sign Out',
+                          style: kHeader3TextStyle.copyWith(color: activeColor),
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      context.router.replace(const LoginRoute());
+                    },
+                  ),
+                ],
+              )
             ],
-          )
-        ],
-      ),
+          ),
+        ),
+        Container(
+          height: size15,
+          width: MediaQuery.of(context).size.width,
+          color: appColor,
+        )
+      ],
     );
   }
 }

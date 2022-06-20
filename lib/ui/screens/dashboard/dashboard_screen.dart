@@ -23,14 +23,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             Dashboard(),
-            SizedBox(
-              height: size20,
-            ),
-            LawyerList(),
-            SizedBox(
-              height: size20,
-            ),
-            CategoriesList()
+            // SizedBox(
+            //   height: size20,
+            // ),
+            // LawyerList(),
+            // SizedBox(
+            //   height: size20,
+            // ),
+            // CategoriesList()
           ],
         ),
       ),
