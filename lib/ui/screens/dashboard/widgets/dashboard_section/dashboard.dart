@@ -38,18 +38,33 @@ class Dashboard extends StatelessWidget {
               style: kHeader3TextStyle,
             ),
             Row(
-              children: const [
-                AppDropdownButton(
+              children: [
+                const AppDropdownButton(
                   value: 'January',
                   items: ['January'],
                 ),
-                SizedBox(
+                const SizedBox(
                   width: size15,
                 ),
-                AppDropdownButton(
+                const AppDropdownButton(
                   value: '2022',
                   items: ['2022'],
-                )
+                ),
+                const SizedBox(
+                  width: size15,
+                ),
+                PopupMenuButton(
+                    splashRadius: size20,
+                    itemBuilder: (BuildContext context) =>
+                        <PopupMenuEntry<String>>[
+                          const PopupMenuItem<String>(
+                            value: '',
+                            child: Text(
+                              'View Current Bookings',
+                              style: kSubtitleTextStyle,
+                            ),
+                          ),
+                        ])
               ],
             ),
           ],
