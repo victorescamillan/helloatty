@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/ui/screens/dashboard/widgets/dashboard_section/static_bar.dart';
@@ -54,6 +55,9 @@ class Dashboard extends StatelessWidget {
                   width: size15,
                 ),
                 PopupMenuButton(
+                    shape: const RoundedRectangleBorder(
+                        side: BorderSide(color: kGrey),
+                        borderRadius: BorderRadius.all(Radius.circular(size5))),
                     splashRadius: size20,
                     itemBuilder: (BuildContext context) =>
                         <PopupMenuEntry<String>>[
