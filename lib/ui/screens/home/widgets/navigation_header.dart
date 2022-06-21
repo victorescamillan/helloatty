@@ -20,6 +20,7 @@ class NavigationHeader extends StatefulWidget {
 
 class _NavigationHeaderState extends State<NavigationHeader> {
   NavItem _navItem = NavItem.home;
+  bool isBookingTapped = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,7 @@ class _NavigationHeaderState extends State<NavigationHeader> {
               InkWell(
                   onTap: () {
                     setState(() {
+                      isBookingTapped = false;
                       _navItem = NavItem.home;
                     });
                     context.router.navigate(const DashboardRoute());
@@ -47,6 +49,7 @@ class _NavigationHeaderState extends State<NavigationHeader> {
                     isActive: _navItem == NavItem.home,
                     onTap: () {
                       setState(() {
+                        isBookingTapped = false;
                         _navItem = NavItem.home;
                       });
                       context.router.navigate(const DashboardRoute());
@@ -64,6 +67,7 @@ class _NavigationHeaderState extends State<NavigationHeader> {
                     ),
                     onTap: () {
                       setState(() {
+                        isBookingTapped = false;
                         _navItem = NavItem.calendar;
                       });
                       context.router.navigate(const CalendarRoute());
@@ -77,6 +81,7 @@ class _NavigationHeaderState extends State<NavigationHeader> {
                     ),
                     onTap: () {
                       setState(() {
+                        isBookingTapped = false;
                         _navItem = NavItem.mySchedule;
                       });
                       context.router.navigate(const MyScheduleRoute());
@@ -90,6 +95,7 @@ class _NavigationHeaderState extends State<NavigationHeader> {
                     ),
                     onTap: () {
                       setState(() {
+                        isBookingTapped = true;
                         _navItem = NavItem.booking;
                       });
                       context.router.navigate(const BookingRoute());
@@ -103,6 +109,7 @@ class _NavigationHeaderState extends State<NavigationHeader> {
                     ),
                     onTap: () {
                       setState(() {
+                        isBookingTapped = false;
                         _navItem = NavItem.finance;
                       });
                       context.router.navigate(const FinanceRoute());
@@ -155,6 +162,10 @@ class _NavigationHeaderState extends State<NavigationHeader> {
             ],
           ),
         ),
+        (isBookingTapped)
+            ?
+        Container()
+            :
         Container(
           height: size15,
           width: MediaQuery.of(context).size.width,
