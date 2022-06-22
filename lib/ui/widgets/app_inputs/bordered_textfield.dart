@@ -56,11 +56,14 @@ class BorderedTextField extends StatelessWidget {
                 cursorColor: kGrey,
                 maxLines: maxLines,
                 decoration: InputDecoration(
-                  enabled: enabled,
                   filled: true,
                   fillColor: enabled ? inputBackground : disabledColor,
                   prefixIcon: prefixIcon,
                   suffixIcon: suffixIcon,
+                  enabled: enabled,
+                  disabledBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: disabledColor),
+                      borderRadius: BorderRadius.all(Radius.circular(size10))),
                   contentPadding: EdgeInsets.symmetric(
                       vertical: verticalPadding, horizontal: horizontalPadding),
                   focusedBorder: const OutlineInputBorder(
