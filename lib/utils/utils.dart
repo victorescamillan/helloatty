@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helloatty/constants/app_dimens.dart';
+import 'package:popover/popover.dart';
 
 void defaultAlertDialog(BuildContext context,
     {required Widget content,
@@ -31,4 +32,19 @@ Future<DateTime?> defaultDateTimePicker(
 
 Size appSize(BuildContext context) {
   return MediaQuery.of(context).size;
+}
+
+showCustomPopOver(BuildContext context,
+    {required Widget content, double width = 200, double height = 150}) {
+  showPopover(
+    context: context,
+    transitionDuration: const Duration(milliseconds: 150),
+    bodyBuilder: (context) => content,
+    onPop: () => print('Popover was popped!'),
+    direction: PopoverDirection.bottom,
+    width: width,
+    height: height,
+    arrowHeight: 15,
+    arrowWidth: 30,
+  );
 }

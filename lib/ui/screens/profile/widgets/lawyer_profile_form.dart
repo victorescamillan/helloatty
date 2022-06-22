@@ -9,7 +9,8 @@ import 'package:helloatty/ui/widgets/app_inputs/bordered_textfield.dart';
 import 'package:helloatty/utils/utils.dart';
 
 class LawyerProfileForm extends StatefulWidget {
-  const LawyerProfileForm({Key? key}) : super(key: key);
+  final bool isUpdate;
+  const LawyerProfileForm({Key? key, this.isUpdate = false}) : super(key: key);
 
   @override
   State<LawyerProfileForm> createState() => _LawyerProfileFormState();
@@ -43,6 +44,7 @@ class _LawyerProfileFormState extends State<LawyerProfileForm> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             BorderedTextField(
+              enabled: !widget.isUpdate,
               label: 'First Name',
               hintText: enterNameText,
               width: inputWidth,
@@ -52,6 +54,7 @@ class _LawyerProfileFormState extends State<LawyerProfileForm> {
               width: size20,
             ),
             BorderedTextField(
+              enabled: !widget.isUpdate,
               label: 'Middle Name',
               hintText: enterNameText,
               width: inputWidth,
@@ -63,6 +66,7 @@ class _LawyerProfileFormState extends State<LawyerProfileForm> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             BorderedTextField(
+              enabled: !widget.isUpdate,
               label: 'Last Name',
               hintText: enterNameText,
               width: inputWidth,
@@ -93,6 +97,7 @@ class _LawyerProfileFormState extends State<LawyerProfileForm> {
               width: size20,
             ),
             BorderedTextField(
+              enabled: !widget.isUpdate,
               label: 'Law School',
               hintText: 'Enter School',
               width: inputWidth,
@@ -113,6 +118,7 @@ class _LawyerProfileFormState extends State<LawyerProfileForm> {
               width: size20,
             ),
             BorderedTextField(
+              enabled: !widget.isUpdate,
               label: 'Year Graduated',
               hintText: 'Select Date',
               width: inputWidth,
@@ -143,6 +149,7 @@ class _LawyerProfileFormState extends State<LawyerProfileForm> {
               width: size20,
             ),
             BorderedTextField(
+              enabled: !widget.isUpdate,
               label: 'Date Admitted to the Bar',
               hintText: 'Select Date',
               width: inputWidth,
@@ -173,6 +180,7 @@ class _LawyerProfileFormState extends State<LawyerProfileForm> {
               width: size20,
             ),
             BorderedTextField(
+              enabled: !widget.isUpdate,
               label: 'Roll Number',
               hintText: 'Enter Roll Number',
               width: inputWidth,

@@ -9,6 +9,7 @@ import 'package:helloatty/navigation/app_router.gr.dart';
 import 'package:helloatty/ui/screens/profile/widgets/admin_profile_form.dart';
 import 'package:helloatty/ui/screens/profile/widgets/client_profile_form.dart';
 import 'package:helloatty/ui/screens/profile/widgets/lawyer_profile_form.dart';
+import 'package:helloatty/ui/screens/profile/widgets/profile_container.dart';
 import 'package:helloatty/ui/screens/registration/widgets/proof_item.dart';
 import 'package:helloatty/ui/widgets/app_buttons/default_button.dart';
 import 'package:helloatty/ui/widgets/app_buttons/default_outlined_button.dart';
@@ -27,34 +28,16 @@ class RegistrationForm extends StatefulWidget {
 class _RegistrationFormState extends State<RegistrationForm> {
   @override
   Widget build(BuildContext context) {
-    double inputWidth = MediaQuery.of(context).size.width / 2.5;
-    return Padding(
-      padding:
-          const EdgeInsets.symmetric(horizontal: size100, vertical: size20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            createAccountText,
-            style: kHeader1TextStyle,
-          ),
-          const SizedBox(
-            height: size20,
-          ),
-          Expanded(
-            child: Card(
-              elevation: 3,
-              child: ListView(
-                padding: const EdgeInsets.all(size20),
-                children: <Widget>[
-                  _getProfileForm(),
-                  _password(inputWidth),
-                  _privacyPolicy(),
-                  _actionButtons()
-                ],
-              ),
-            ),
-          ),
+    double inputWidth = appSize(context).width / 2.5;
+    return ProfileContainer(
+      title: createAccountText,
+      content: ListView(
+        padding: const EdgeInsets.all(size20),
+        children: <Widget>[
+          _getProfileForm(),
+          _password(inputWidth),
+          _privacyPolicy(),
+          _actionButtons()
         ],
       ),
     );
@@ -321,7 +304,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
           },
           width: size200,
           child: Text(
-            'Cancel',
+            cancelText,
             style: kTitleTextStyle.copyWith(color: appColor),
           ),
         )

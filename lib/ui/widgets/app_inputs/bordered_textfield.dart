@@ -50,6 +50,7 @@ class BorderedTextField extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: size6),
               child: TextField(
+                enabled: enabled,
                 controller: controller,
                 obscureText: isObscureText,
                 cursorColor: kGrey,
@@ -57,7 +58,7 @@ class BorderedTextField extends StatelessWidget {
                 decoration: InputDecoration(
                   enabled: enabled,
                   filled: true,
-                  fillColor: inputBackground,
+                  fillColor: enabled ? inputBackground : disabledColor,
                   prefixIcon: prefixIcon,
                   suffixIcon: suffixIcon,
                   contentPadding: EdgeInsets.symmetric(

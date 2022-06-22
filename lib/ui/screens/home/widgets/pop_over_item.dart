@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helloatty/constants/app_colors.dart';
+import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 
 class PopOverItem extends StatelessWidget {
@@ -14,17 +15,25 @@ class PopOverItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: onTap,
-        child: Container(
-          alignment: Alignment.center,
-          color: isSelected ? activeColor : kWhite,
-          width: 200,
-          height: 50,
-          child: Text(
-            title,
-            style: isSelected
-                ? kTitleTextStyle.copyWith(color: kWhite)
-                : kTitleTextStyle,
-          ),
+        child: Column(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              color: isSelected ? activeColor : kWhite,
+              width: 200,
+              height: 49,
+              child: Text(
+                title,
+                style: isSelected
+                    ? kTitleTextStyle.copyWith(color: kWhite)
+                    : kTitleTextStyle,
+              ),
+            ),
+            const Divider(
+              color: kGrey,
+              height: size1,
+            )
+          ],
         ));
   }
 }

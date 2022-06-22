@@ -7,6 +7,7 @@ import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/enums/enums.dart';
 import 'package:helloatty/navigation/app_router.gr.dart';
+import 'package:helloatty/ui/screens/home/widgets/notification_icon.dart';
 import 'package:helloatty/ui/screens/home/widgets/profile_avatar.dart';
 import 'package:helloatty/ui/widgets/navigation_item.dart';
 import 'package:popover/popover.dart';
@@ -123,14 +124,7 @@ class _NavigationHeaderState extends State<NavigationHeader> {
                     ),
                     onTap: () {},
                   ),
-                  NavigationItem(
-                    child: SvgPicture.asset(
-                      bellAsset,
-                      height: size26,
-                      width: size26,
-                    ),
-                    onTap: () {},
-                  ),
+                  const NotificationIcon(),
                   const ProfileAvatar(),
                   NavigationItem(
                     child: Row(
@@ -163,14 +157,12 @@ class _NavigationHeaderState extends State<NavigationHeader> {
           ),
         ),
         (isBookingTapped)
-            ?
-        Container()
-            :
-        Container(
-          height: size15,
-          width: MediaQuery.of(context).size.width,
-          color: appColor,
-        )
+            ? Container()
+            : Container(
+                height: size15,
+                width: MediaQuery.of(context).size.width,
+                color: appColor,
+              )
       ],
     );
   }
