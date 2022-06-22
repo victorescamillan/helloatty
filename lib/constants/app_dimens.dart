@@ -29,12 +29,17 @@ const double size28 = 28;
 const double size29 = 29;
 const double size30 = 30;
 const double size35 = 35;
+const double size38 = 38;
 const double size40 = 40;
 const double size45 = 45;
 const double size50 = 50;
+const double size60 = 60;
+const double size70 = 70;
 const double size80 = 80;
 const double size90 = 90;
 const double size100 = 100;
+const double size150 = 150;
+const double size200 = 200;
 const double size300 = 300;
 
 //Padding size

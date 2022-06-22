@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 
-class DefaultElevatedButton extends StatelessWidget {
+class DefaultOutlinedButton extends StatelessWidget {
   final double width;
   final double verticalMargin;
   final double horizontalMargin;
   final double verticalPadding;
-  final Function? onPressed;
-  final Widget? child;
-  const DefaultElevatedButton(
+  final VoidCallback? onPressed;
+  final Widget child;
+  const DefaultOutlinedButton(
       {Key? key,
       this.onPressed,
-      this.child,
+      required this.child,
       this.width = double.infinity,
       this.verticalPadding = size20,
       this.verticalMargin = size20,
@@ -25,11 +25,11 @@ class DefaultElevatedButton extends StatelessWidget {
         width: width,
         margin: EdgeInsets.symmetric(
             vertical: verticalMargin, horizontal: horizontalMargin),
-        child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
+        child: OutlinedButton(
+            style: OutlinedButton.styleFrom(
                 primary: appColor,
                 padding: EdgeInsets.symmetric(vertical: verticalPadding)),
-            onPressed: () => onPressed,
+            onPressed: onPressed,
             child: child));
   }
 }

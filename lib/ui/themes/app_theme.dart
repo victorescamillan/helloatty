@@ -7,4 +7,4 @@ final ThemeData defaultTheme = ThemeData(
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
             shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(size10))))));
+                borderRadius: BorderRadius.all(Radius.circular(size5))))));

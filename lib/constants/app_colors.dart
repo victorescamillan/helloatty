@@ -10,8 +10,11 @@ const Color kRed = Color(0xFFF14336);
 //Common
 const Color appTitleColor = Color(0xFF575757);
 const Color appSubTitleColor = Color(0xFF848181);
-const Color unselectedColor = Color(0xFFEEF7EE);
+const Color unselectedColor = Color(0xFFBDBDBD);
 const Color notificationBackground = Color(0xFFF7FCF8);
+const Color activeColor = Color(0xFFF14336);
+const Color footerBackground = Color(0xFF171717);
+const Color inputBackground = Color(0xFFF9FAFF);
 
 //Cards
 const Color cardColor = Color(0xFFEEF7EE);

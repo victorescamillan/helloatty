@@ -6,8 +6,8 @@ import 'package:helloatty/constants/app_colors.dart';
 import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/navigation/app_router.gr.dart';
-import 'package:helloatty/ui/widgets/app_buttons.dart';
-import 'package:helloatty/ui/widgets/app_inputs.dart';
+import 'package:helloatty/ui/widgets/app_buttons/default_button.dart';
+import 'package:helloatty/ui/widgets/app_inputs/default_textfield.dart';
 
 class LoginCredentials extends StatefulWidget {
   const LoginCredentials({Key? key}) : super(key: key);
@@ -57,7 +57,7 @@ class _LoginCredentialsState extends State<LoginCredentials> {
                 DefaultTextField(
                   controller: _passwordController,
                   hintText: 'Password',
-                  isObscureText: _showPassword,
+                  isObscureText: !_showPassword,
                   suffixIcon: IconButton(
                     onPressed: () {
                       if (_passwordController.text == '') {
@@ -69,7 +69,7 @@ class _LoginCredentialsState extends State<LoginCredentials> {
                     },
                     splashRadius: size20,
                     icon: Icon(
-                      _showPassword
+                      !_showPassword
                           ? Icons.remove_red_eye_rounded
                           : Icons.remove_red_eye_outlined,
                       color: kGrey,
@@ -82,7 +82,7 @@ class _LoginCredentialsState extends State<LoginCredentials> {
                     padding: const EdgeInsets.symmetric(vertical: size10),
                     child: TextButton(
                         onPressed: () {
-                          context.router.push(const ForgotPasswordScreen());
+                          context.router.push(const ForgotPasswordRoute());
                         },
                         child: Text(
                           'Forgot Password',
@@ -91,7 +91,9 @@ class _LoginCredentialsState extends State<LoginCredentials> {
                   ),
                 ),
                 DefaultElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.router.replace(const HomeRoute());
+                  },
                   child: Text(
                     'Login',
                     style: kTitleTextStyle.copyWith(color: kWhite),
@@ -110,7 +112,7 @@ class _LoginCredentialsState extends State<LoginCredentials> {
                     )),
                     TextButton(
                         onPressed: () {
-                          context.router.push(const RegistrationScreen());
+                          context.router.push(const RegistrationRoute());
                         },
                         child: Row(
                           children: [
