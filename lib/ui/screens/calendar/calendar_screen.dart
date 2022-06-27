@@ -30,6 +30,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
           child: MainContainer(
               title: 'Calendar',
               content: SfCalendar(
+                showNavigationArrow: true,
+                allowViewNavigation: true,
+                showDatePickerButton: true,
                 view: CalendarView.month,
                 dataSource: MeetingDataSource(_getDataSource()),
                 monthViewSettings: const MonthViewSettings(
