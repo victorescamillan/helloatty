@@ -4,9 +4,9 @@ import 'package:helloatty/constants/app_dimens.dart';
 import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/constants/app_texts.dart';
 import 'package:helloatty/ui/screens/profile/widgets/lawyer_profile_form.dart';
-import 'package:helloatty/ui/screens/profile/widgets/profile_container.dart';
 import 'package:helloatty/ui/widgets/app_buttons/default_button.dart';
 import 'package:helloatty/ui/widgets/app_buttons/default_outlined_button.dart';
+import 'package:helloatty/ui/widgets/main_container.dart';
 import 'package:helloatty/ui/widgets/temp_container.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class EditProfileScreen extends StatefulWidget {
 class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return ProfileContainer(
+    return MainContainer(
         title: 'Edit Profile',
         content: ListView(
           padding: const EdgeInsets.all(size20),

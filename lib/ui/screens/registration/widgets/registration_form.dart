@@ -9,12 +9,12 @@ import 'package:helloatty/navigation/app_router.gr.dart';
 import 'package:helloatty/ui/screens/profile/widgets/admin_profile_form.dart';
 import 'package:helloatty/ui/screens/profile/widgets/client_profile_form.dart';
 import 'package:helloatty/ui/screens/profile/widgets/lawyer_profile_form.dart';
-import 'package:helloatty/ui/screens/profile/widgets/profile_container.dart';
 import 'package:helloatty/ui/screens/registration/widgets/proof_item.dart';
 import 'package:helloatty/ui/widgets/app_buttons/default_button.dart';
 import 'package:helloatty/ui/widgets/app_buttons/default_outlined_button.dart';
 import 'package:helloatty/ui/widgets/app_dropdowns/bordered_dropdown_button.dart';
 import 'package:helloatty/ui/widgets/app_inputs/bordered_textfield.dart';
+import 'package:helloatty/ui/widgets/main_container.dart';
 import 'package:helloatty/utils/utils.dart';
 
 class RegistrationForm extends StatefulWidget {
@@ -29,7 +29,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
   @override
   Widget build(BuildContext context) {
     double inputWidth = appSize(context).width / 2.5;
-    return ProfileContainer(
+    return MainContainer(
       title: createAccountText,
       content: ListView(
         padding: const EdgeInsets.all(size20),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloatty/ui/widgets/temp_container.dart';
+import 'package:helloatty/ui/widgets/main_container.dart';
 
 class FinanceScreen extends StatefulWidget {
   const FinanceScreen({Key? key}) : super(key: key);
@@ -11,8 +11,6 @@ class FinanceScreen extends StatefulWidget {
 class _FinanceScreenState extends State<FinanceScreen> {
   @override
   Widget build(BuildContext context) {
-    return const TempContainer(
-      title: 'Finance',
-    );
+    return MainContainer(title: 'Finance', content: Container());
   }
 }
