@@ -5,24 +5,19 @@ import 'package:helloatty/constants/app_styles.dart';
 import 'package:helloatty/ui/screens/dashboard/widgets/dashboard_section/static_bar.dart';
 import 'package:helloatty/ui/widgets/app_cards/default_card.dart';
 import 'package:helloatty/ui/widgets/app_dropdowns/default_dropdown_button%20copy.dart';
+import 'package:helloatty/ui/widgets/main_container.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          'Dashboard',
-          style: kHeader1TextStyle,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [_totalBookings(context), _totalAmountPaid(context)],
-        )
-      ],
+    return MainContainer(
+      title: 'Dashboard',
+      content: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [_totalBookings(context), _totalAmountPaid(context)],
+      ),
     );
   }
 

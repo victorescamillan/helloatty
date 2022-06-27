@@ -15,25 +15,22 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding:
-            const EdgeInsets.symmetric(horizontal: size100, vertical: size20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Dashboard(),
-            // SizedBox(
-            //   height: size20,
-            // ),
-            // LawyerList(),
-            // SizedBox(
-            //   height: size20,
-            // ),
-            // CategoriesList()
-          ],
-        ),
-      ),
-    );
+    return const Dashboard();
+    // return SingleChildScrollView(
+    //   child: Column(
+    //     crossAxisAlignment: CrossAxisAlignment.start,
+    //     children: const [
+    //       Dashboard(),
+    //       // SizedBox(
+    //       //   height: size20,
+    //       // ),
+    //       // LawyerList(),
+    //       // SizedBox(
+    //       //   height: size20,
+    //       // ),
+    //       // CategoriesList()
+    //     ],
+    //   ),
+    // );
   }
 }
