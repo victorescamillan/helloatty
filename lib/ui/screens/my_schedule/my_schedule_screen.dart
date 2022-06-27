@@ -12,6 +12,7 @@ class MyScheduleScreen extends StatefulWidget {
 class _MyScheduleScreenState extends State<MyScheduleScreen> {
   @override
   Widget build(BuildContext context) {
-    return MainContainer(title: 'My Schedule', content: MyScheduleWidget());
+    return const MainContainer(
+        title: 'My Schedule', content: MyScheduleWidget());
   }
 }
