@@ -92,7 +92,7 @@ class _BookingFilterState extends State<BookingFilter> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const CircleAvatar(
                         radius: size40,
@@ -112,35 +112,17 @@ class _BookingFilterState extends State<BookingFilter> {
                   ),
                   const SizedBox(height: size15,),
                   const Text('Joshua Barnes', style: kHeader1TextStyle,),
-                  const Text('Financial Lawyer', style: kSubtitle2TextStyle,),
-                  const Text('15 years of Experience | Class of 2000', style: kSubtitle2TextStyle,),
-                  const SizedBox(height: size20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: const[
-                      Icon(Icons.school),
-                      SizedBox(width: size5,),
-                      Text('University of the Philippines', style: kBlueTextStyle,),
-                    ],
-                  ),
-                  const SizedBox(height: size20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: const[
-                      Icon(Icons.person),
-                      SizedBox(width: size5,),
-                      Expanded(
-                        child: Text(
-                          'Specialized in Finance and Security',
-                          style: kBlueTextStyle,
-                        ),
-                      ),
-                    ],
-                  ),
+                  const Text('Client', style: kSubtitle2TextStyle,),
                   const SizedBox(height: size20,),
                   const Text('Schedule', style: kTitleTextStyle,),
-                  const Text('Wed, March 10, 2021 | 10:30 am', style: kTitleTextStyle,),
-                  const Text('https://zoom.us/meetings', style: kTitleTextStyle,)
+                  const SizedBox(height: size5,),
+                  Text('Wed, March 10, 2021 | 10:30 am', style: kTitleTextStyle.copyWith(color: kRed),),
+                  const SizedBox(height: size5,),
+                  const Text('https://zoom.us/meetings', style: kTitleTextStyle,),
+                  const SizedBox(height: size50,),
+                  const Text('Topic / Query', style: kTitleTextStyle,),
+                  const SizedBox(height: size5,),
+                  Text('Noisy Neighbor and Harassment', style: kTitleTextStyle.copyWith(color: kRed),)
                 ],
               ),
             ),
@@ -152,7 +134,7 @@ class _BookingFilterState extends State<BookingFilter> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const CircleAvatar(
                         radius: size40,
@@ -162,7 +144,7 @@ class _BookingFilterState extends State<BookingFilter> {
                       const SizedBox(width: 85,),
                       Column(
                         children: const [
-                          Text('10',
+                          Text('15',
                             style: kHeaderTextStyle,),
                           Text('March',
                             style: kActiveColorTextStyle,),
@@ -171,36 +153,18 @@ class _BookingFilterState extends State<BookingFilter> {
                     ],
                   ),
                   const SizedBox(height: size15,),
-                  const Text('Joshua Barnes', style: kHeader1TextStyle,),
+                  const Text('Joshua Doe', style: kHeader1TextStyle,),
                   const Text('Financial Lawyer', style: kSubtitle2TextStyle,),
-                  const Text('15 years of Experience | Class of 2000', style: kSubtitle2TextStyle,),
-                  const SizedBox(height: size20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: const[
-                      Icon(Icons.school),
-                      SizedBox(width: size5,),
-                      Text('University of the Philippines', style: kBlueTextStyle,),
-                    ],
-                  ),
-                  const SizedBox(height: size20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: const[
-                      Icon(Icons.person),
-                      SizedBox(width: size5,),
-                      Expanded(
-                        child: Text(
-                          'Specialized in Finance and Security',
-                          style: kBlueTextStyle,
-                        ),
-                      ),
-                    ],
-                  ),
                   const SizedBox(height: size20,),
                   const Text('Schedule', style: kTitleTextStyle,),
-                  const Text('Wed, March 10, 2021 | 10:30 am', style: kTitleTextStyle,),
-                  const Text('https://zoom.us/meetings', style: kTitleTextStyle,)
+                  const SizedBox(height: size5,),
+                  Text('Tue, March 15, 2021 | 10:30 am', style: kTitleTextStyle.copyWith(color: kRed),),
+                  const SizedBox(height: size5,),
+                  const Text('https://zoom.us/meetings', style: kTitleTextStyle,),
+                  const SizedBox(height: size50,),
+                  const Text('Topic / Query', style: kTitleTextStyle,),
+                  const SizedBox(height: size5,),
+                  Text('Noisy Neighbor and Harassment', style: kTitleTextStyle.copyWith(color: kRed),)
                 ],
               ),
             )
