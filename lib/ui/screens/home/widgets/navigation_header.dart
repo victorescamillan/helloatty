@@ -117,14 +117,28 @@ class _NavigationHeaderState extends State<NavigationHeader> {
                     },
                   ),
                   NavigationItem(
-                    child: SvgPicture.asset(
-                      messagesAsset,
-                      height: size26,
-                      width: size26,
-                    ),
-                    onTap: () {},
+                    child: SvgPicture.asset(messagesAsset,
+                        height: size26,
+                        width: size26,
+                        color: _navItem == NavItem.chat ? activeColor : null),
+                    onTap: () {
+                      setState(() {
+                        _navItem = NavItem.chat;
+                      });
+                      context.router.navigate(const MessagesRoute());
+                    },
                   ),
-                  const NotificationIcon(),
+                  NotificationIcon(
+                    isActive: _navItem == NavItem.notifications,
+                    onSelectAll: () {
+                      setState(() {
+                        _navItem = NavItem.notifications;
+                      });
+
+                      context.router.navigate(const NotificationRoute());
+                      Navigator.pop(context);
+                    },
+                  ),
                   const ProfileAvatar(),
                   NavigationItem(
                     child: Row(

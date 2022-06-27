@@ -13,7 +13,10 @@ import 'package:popover/popover.dart';
 import 'package:auto_route/auto_route.dart';
 
 class NotificationIcon extends StatefulWidget {
-  const NotificationIcon({Key? key}) : super(key: key);
+  final VoidCallback? onSelectAll;
+  final bool isActive;
+  const NotificationIcon({Key? key, this.onSelectAll, this.isActive = false})
+      : super(key: key);
 
   @override
   State<NotificationIcon> createState() => _NotificationIconState();
@@ -24,11 +27,10 @@ class _NotificationIconState extends State<NotificationIcon> {
   @override
   Widget build(BuildContext context) {
     return NavigationItem(
-      child: SvgPicture.asset(
-        bellAsset,
-        height: size26,
-        width: size26,
-      ),
+      child: SvgPicture.asset(bellAsset,
+          height: size26,
+          width: size26,
+          color: widget.isActive ? activeColor : null),
       onTap: () {
         showCustomPopOver(context,
             width: 400,
@@ -60,10 +62,7 @@ class _NotificationIconState extends State<NotificationIcon> {
                 Padding(
                   padding: const EdgeInsets.all(defaultPadding),
                   child: TextButton(
-                      onPressed: () {
-                        context.router.navigate(const NotificationRoute());
-                        Navigator.pop(context);
-                      },
+                      onPressed: widget.onSelectAll,
                       child: Text(
                         'See all Notifications',
                         style: kHeader3TextStyle.copyWith(
