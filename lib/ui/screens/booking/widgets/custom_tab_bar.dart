@@ -14,8 +14,9 @@ class CustomTabBar extends StatefulWidget {
 
 class _CustomTabBarState extends State<CustomTabBar> {
 
-  bool isCurrentTap = true;
-  bool isHistoryTap = false;
+  bool isHistoryTap = true;
+  bool isRemovalTap = false;
+  bool isCompletionTap = false;
 
   bool isAllTap = true;
   bool isPendingTap = false;
@@ -26,17 +27,68 @@ class _CustomTabBarState extends State<CustomTabBar> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          'Booking',
-          style: kHeader1TextStyle,
-        ),
         const SizedBox(height: size20,),
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _currentOrHistoryTab(),
             const SizedBox(height: size15,),
-            (isCurrentTap) ? const BookingGridView() : const BookingHistoryGrid()
+            const BookingGridView(),
+            const SizedBox(height: size20,),
+            SizedBox(
+              height: size40,
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                        color: kRed,
+                        border: Border.all(
+                          color: kRed,
+                        ),
+                        borderRadius: const BorderRadius.all(Radius.circular(5))
+                    ),
+                    child: Text('1', style: kTitleTextStyle.copyWith(color: kWhite, fontSize: size20),),
+                  ),
+                  const SizedBox(width: size15,),
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                        color: kWhite,
+                        border: Border.all(
+                          color: kWhite,
+                        ),
+                        borderRadius: const BorderRadius.all(Radius.circular(5))
+                    ),
+                    child: Text('2', style: kTitleTextStyle.copyWith(color: kRed, fontSize: size20),),
+                  ),
+                  const SizedBox(width: size15,),
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                        color: kWhite,
+                        border: Border.all(
+                          color: kWhite,
+                        ),
+                        borderRadius: const BorderRadius.all(Radius.circular(5))
+                    ),
+                    child: Text('3', style: kTitleTextStyle.copyWith(color: kRed, fontSize: size20),),
+                  ),
+                  const SizedBox(width: size15,),
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                        color: kWhite,
+                        border: Border.all(
+                          color: kWhite,
+                        ),
+                        borderRadius: const BorderRadius.all(Radius.circular(5))
+                    ),
+                    child: Text('4', style: kTitleTextStyle.copyWith(color: kRed, fontSize: size20),),
+                  )
+                ],
+              ),
+            )
           ],
         )
       ],
@@ -53,19 +105,20 @@ class _CustomTabBarState extends State<CustomTabBar> {
           ),
           decoration: BoxDecoration(
               border: Border(bottom: BorderSide(
-                color: (isCurrentTap) ? activeColor : kWhite,
+                color: (isHistoryTap) ? activeColor : kWhite,
                 width: 2.0,
               ))
           ),
           child: GestureDetector(
             child: const Text(
-                'Current Appointment',
+                'History',
                 style: kTitleTextStyle
             ),
             onTap: () {
               setState((){
-                isCurrentTap = true;
-                isHistoryTap = false;
+                isHistoryTap = true;
+                isRemovalTap = false;
+                isCompletionTap = false;
               });
             },
           )
@@ -77,19 +130,45 @@ class _CustomTabBarState extends State<CustomTabBar> {
             ),
             decoration: BoxDecoration(
                 border: Border(bottom: BorderSide(
-                  color: (isHistoryTap) ? activeColor : kWhite,
+                  color: (isRemovalTap) ? activeColor : kWhite,
                   width: 2.0,
                 ))
             ),
             child: GestureDetector(
               child: const Text(
-                  'Booking History',
+                  'Removal',
                   style: kTitleTextStyle
               ),
               onTap: () {
                 setState((){
-                  isCurrentTap = false;
-                  isHistoryTap = true;
+                  isHistoryTap = false;
+                  isRemovalTap = true;
+                  isCompletionTap = false;
+                });
+              },
+            )
+        ),
+        const SizedBox(width: size20,),
+        Container(
+            padding: const EdgeInsets.only(
+              bottom: 3,
+            ),
+            decoration: BoxDecoration(
+                border: Border(bottom: BorderSide(
+                  color: (isCompletionTap) ? activeColor : kWhite,
+                  width: 2.0,
+                ))
+            ),
+            child: GestureDetector(
+              child: const Text(
+                  'Completion',
+                  style: kTitleTextStyle
+              ),
+              onTap: () {
+                setState((){
+                  isHistoryTap = false;
+                  isRemovalTap = false;
+                  isCompletionTap = true;
                 });
               },
             )

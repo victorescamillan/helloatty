@@ -18,21 +18,27 @@ class BookingScreen extends StatefulWidget {
 class _BookingScreenState extends State<BookingScreen> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SearchInput(),
-        const SizedBox(height: size15,),
-        Padding(
-          padding:
-          const EdgeInsets.symmetric(horizontal: size100, vertical: size20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              BookingFilter(),
-            ],
-          ),
-        )
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const SearchInput(),
+          const SizedBox(height: size15,),
+          Padding(
+            padding:
+            const EdgeInsets.symmetric(horizontal: size100, vertical: size20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Booking History',
+                  style: kHeaderTextStyle.copyWith(color: appColor, fontSize: 35),
+                ),
+                const CustomTabBar(),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
